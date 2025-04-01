@@ -47,6 +47,7 @@ jobs:
         --hidden-import tkinter.ttk ^
         --hidden-import tkinter.messagebox ^
         --hidden-import tkinter.filedialog ^
+        --debug all ^
         src/main.py
           
     - name: Create release
@@ -57,6 +58,17 @@ jobs:
       with:
         tag_name: ${{ github.ref }}
         release_name: 图片处理工具 v${{ github.ref_name }}
+        body: |
+          图片处理工具 v${{ github.ref_name }}
+          
+          功能特性：
+          - 生成缩略图
+          - 转换为 avif/webp 格式
+          
+          环境要求：
+          - Windows 操作系统
+          - ffmpeg（用于生成缩略图）
+          - optimizt（用于转换为 avif/webp 格式）
         draft: false
         prerelease: false
         
