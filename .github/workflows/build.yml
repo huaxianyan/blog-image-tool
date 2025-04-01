@@ -24,13 +24,14 @@ jobs:
         pip install pyinstaller
         
     - name: Build executable
+      shell: cmd
       run: |
         pyinstaller --noconfirm --clean ^
-          --add-data "2.ico;." ^
-          --icon=2.ico ^
-          --name "blog-image-tool" ^
-          --windowed ^
-          src/main.py
+        --add-data "2.ico;." ^
+        --icon="2.ico" ^
+        --name "blog-image-tool" ^
+        --windowed ^
+        src/main.py
           
     - name: Create release
       id: create_release
