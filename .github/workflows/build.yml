@@ -48,6 +48,9 @@ jobs:
         --hidden-import tkinter.messagebox ^
         --hidden-import tkinter.filedialog ^
         --debug all ^
+        --runtime-hook add_dll_directory.py ^
+        --collect-all ttkbootstrap ^
+        --collect-all PIL ^
         src/main.py
           
     - name: Create release
