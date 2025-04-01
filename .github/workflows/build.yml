@@ -36,6 +36,17 @@ jobs:
         --icon="2.ico" ^
         --name "图片处理工具" ^
         --windowed ^
+        --hidden-import asyncio ^
+        --hidden-import ttkbootstrap ^
+        --hidden-import PIL ^
+        --hidden-import PIL._tkinter_finder ^
+        --hidden-import ctypes ^
+        --hidden-import queue ^
+        --hidden-import threading ^
+        --hidden-import tkinter ^
+        --hidden-import tkinter.ttk ^
+        --hidden-import tkinter.messagebox ^
+        --hidden-import tkinter.filedialog ^
         src/main.py
           
     - name: Create release
@@ -45,7 +56,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         tag_name: ${{ github.ref }}
-        release_name: Release ${{ github.ref_name }}
+        release_name: 图片处理工具 v${{ github.ref_name }}
         draft: false
         prerelease: false
         
