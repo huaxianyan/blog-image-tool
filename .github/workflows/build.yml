@@ -34,7 +34,7 @@ jobs:
         pyinstaller --noconfirm --clean ^
         --add-data "2.ico;." ^
         --icon="2.ico" ^
-        --name "blog-image-tool" ^
+        --name "图片处理工具" ^
         --windowed ^
         src/main.py
           
@@ -55,6 +55,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./dist/blog-image-tool.exe
-        asset_name: blog-image-tool.exe
+        asset_path: ./dist/图片处理工具/图片处理工具.exe
+        asset_name: 图片处理工具.exe
         asset_content_type: application/x-msdownload 
